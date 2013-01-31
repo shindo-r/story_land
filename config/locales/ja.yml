@@ -1,0 +1,12 @@
+ja:
+  hello: こんにちは
+  devise:
+    sessions:
+      new:
+        sign_in: 'サインイン'
+  activerecord:
+    attributes:
+      user:
+        email: メールアドレス
+        password: パスワード
+        remember_me: ログイン情報を保持

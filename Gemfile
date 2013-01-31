@@ -36,3 +36,27 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'devise'
+
+gem "haml-rails"
+
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+
+group :development do
+  gem "letter_opener"
+end
+
+group :test, :development do
+  gem 'pry-rails'
+  gem "rspec-rails", "~> 2.0"
+end
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'launchy'
+end
