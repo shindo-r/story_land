@@ -1,0 +1,13 @@
+language: ruby
+#bundler_args: --without development --path vendor/bundle
+before_script: "rake db:setup"
+script: "bundle exec cucumber"
+rvm:
+  - 1.9.3
+gemfile:
+  - Gemfile
+branches:
+  only:
+    - master
+env:
+  - DB=sqlite3
