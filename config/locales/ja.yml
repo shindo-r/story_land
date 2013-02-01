@@ -1,9 +1,6 @@
 ja:
-  hello: こんにちは
-  devise:
-    sessions:
-      new:
-        sign_in: 'サインイン'
+  sign_in: 'サインイン'
+  sign_out: 'サインアウト'
   activerecord:
     attributes:
       user:

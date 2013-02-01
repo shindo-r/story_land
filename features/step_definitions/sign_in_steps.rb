@@ -45,20 +45,24 @@ end
 end
 
 もし /^以下のように入力して"(.*?)"する$/ do |button_name, table|
-  hashes_of(table).first.each do |key, value|
-    input_value key, value
+  within('form') do
+    hashes_of(table).first.each do |key, value|
+      input_value key, value
+    end
+    click_on button_name
   end
-  click_on button_name
 end
 
 ならば /^サインイン状態になる$/ do
-  # TODO もっと厳密にチェックすること
-  current_path.should == root_path
+  within('.navbar') do
+    page.should have_content('サインアウト')
+  end
 end
 
 ならば /^サインイン状態にならない$/ do
-  # TODO もっと厳密にチェックすること
-  current_path.should == new_user_session_path
+  within('.navbar') do
+    page.should have_content('サインイン')
+  end
 end
 
 ならば /^入力情報が間違っているという情報が提示されること$/ do
