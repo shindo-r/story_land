@@ -35,8 +35,10 @@ end
       case key
       when 'メールアドレス'
         user.email = value
+        @email = value
       when 'パスワード'
         user.password = value
+        @password = value
       when '確認済'
         if value.downcase == 'yes'
           user.confirmation_token = 'hoge'
