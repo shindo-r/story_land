@@ -1,9 +1,33 @@
 ja:
-  sign_in: 'サインイン'
-  sign_out: 'サインアウト'
+  sign_in: サインイン
+  sign_up: サインアップ
+  sign_out: サインアウト
+
+  date:
+    order:
+      - :year
+      - :month
+      - :day
+  devise:
+    shared:
+      links:
+        forgot_your_password?: パスワードを忘れた
+    registrations:
+      new:
+        agreement: 利用規約
+        sign_up: 利用規約に同意して登録
   activerecord:
     attributes:
       user:
         email: メールアドレス
         password: パスワード
+        password_confirmation: パスワード(確認)
+        nickname: ニックネーム
+        birthday: 生年月日
         remember_me: ログイン情報を保持
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: は既に登録されています。パスワードをお忘れの場合は<a href='/users/password/new'>パスワード再発行手続き</a>を行ってください。

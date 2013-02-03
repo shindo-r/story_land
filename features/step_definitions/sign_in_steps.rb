@@ -1,17 +1,27 @@
 # encoding: UTF-8
 
 def hashes_of(table)
-  if table.rows.first == ['項目', '値']
-    table.rows_hash.tap{|h| h.delete('項目') }
+  if table.headers == ['項目', '値']
+    [Hash[*table.rows.flatten]]
   else
     table.hashes
   end
 end
 
+
 def input_value(column, value)
-  field_id = find('label',text:column)['for']
-  field = find("##{field_id}")
-  field.set value
+  labels = all('label',text:column)
+  raise "#{column} is not found" if labels.blank?
+  field_id = labels.first['for']
+  fields = all("##{field_id}")
+  unless fields.blank?
+    fields.first.set value
+  else
+    d = value.to_date
+    select d.year.to_s,  from: "#{field_id}_1i"
+    select d.month.to_s, from: "#{field_id}_2i"
+    select d.day.to_s,   from: "#{field_id}_3i"
+  end
 end
 
 もし /^open$/ do 

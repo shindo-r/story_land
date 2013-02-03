@@ -3,7 +3,9 @@ StoryLand::Application.routes.draw do
   devise_for :users
 
   root :to => "home#index"
-  
+  match '/agreement',   :to => 'pages#agreement'
+  match '/finish_inactive_sign_up', :to => 'pages#finish_inactive_sign_up'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
