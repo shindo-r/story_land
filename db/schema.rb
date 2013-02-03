@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(:version => 20130130114452) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "nickname"
+    t.date     "birthday"
     t.datetime "created_at",                                            :null => false
     t.datetime "updated_at",                                            :null => false
   end

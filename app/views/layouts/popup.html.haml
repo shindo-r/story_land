@@ -25,31 +25,11 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="#") StoryLand
-          .container.nav-collapse
-            %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              - if user_signed_in?
-                %li= link_to(t(:sign_out), destroy_user_session_path, :method => :delete)
-              - else
-                %li= link_to(t(:sign_in), new_user_session_path)
-
+          .brand StoryLand
     .container
-
       .row
         .span9
-          = bootstrap_flash
           = yield
-        .span3
-          .well.sidebar-nav
-            %h3 Sidebar
-            %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
-    
       %footer
         %p &copy; Company 2012
     /
